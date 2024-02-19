@@ -46,7 +46,7 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item menu-open">
+                        <li class="nav-item @if(Request::is('metric/*')) menu-open @endif">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-chart-line"></i>
                                 <p>
@@ -55,13 +55,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('metric.run') }}" class="nav-link">
+                                    <a href="{{ route('metric.run') }}" class="nav-link @if(Request::is('metric/run')) active @endif">
                                         <i class="nav-icon fas fa-play"></i>
                                         <p>Run</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('metric.history') }}" class="nav-link">
+                                    <a href="{{ route('metric.history') }}" class="nav-link @if(Request::is('metric/history')) active @endif"
                                         <i class="nav-icon fas fa-list-alt"></i>
                                         <p>History</p>
                                     </a>
